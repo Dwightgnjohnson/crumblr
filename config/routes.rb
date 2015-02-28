@@ -1,6 +1,11 @@
 Crumblr::Application.routes.draw do
-  get "pages/welcome"
-  get "pages/about"
+  root "pages#welcome"
+
+  get "about" => "pages#about"
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -41,7 +46,7 @@ Crumblr::Application.routes.draw do
   #       get 'recent', on: :collection
   #     end
   #   end
-  
+
   # Example resource route with concerns:
   #   concern :toggleable do
   #     post 'toggle'
