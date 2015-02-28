@@ -1,17 +1,30 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Crumblr</title>
+    <title>Tumblr'ish</title>
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
   </head>
   <body>
+    <div class="container">
+      <div class="page-header">
+        <ul class="nav nav-pills pull-right">
+          <li><%= link_to "Welcome", "/" %></li>
+          <li><%= link_to "About", "/about" %></li>
+        </ul>
 
-    <%= link_to "Welcome", "/" %>
-    <%= link_to "About", "/about" %>
+        <h1> <%= link_to "Tumblr'ish", "/" %> <small>//</small></h1>
+      </div>
 
-  <%= yield %>
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+          <%= yield %>
+        </div>
+      </div>
 
+    </div>
   </body>
 </html>
