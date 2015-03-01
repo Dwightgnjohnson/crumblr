@@ -1,0 +1,5 @@
+<h2><%= link_to post.title, post %> </h2>
+
+<p><%= simple_format truncate(post.content, length: 400) %></p>
+
+<small class="text-muted"><strong>Updated at: </strong><%= post.updated_at.to_formatted_s(:long) %> | <strong>Posted on: </strong><%= post.created_at.to_formatted_s(:long) %></small>
