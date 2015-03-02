@@ -1,5 +1,11 @@
 <h2><%= link_to post.title, post %> </h2>
 
-<p><%= simple_format truncate(post.content, length: 400) %></p>
+<p>
+  <% if post.kind == 'image'%>
+    <%= image_tag post.content, style: "max-width:100%;" %>
+  <% else %>
+    <%= simple_format post.content %>
+  <% end %>
+</p>
 
 <small class="text-muted"><strong>Updated at: </strong><%= post.updated_at.to_formatted_s(:short) %> | <strong>Posted on: </strong><%= post.created_at.to_formatted_s(:long) %></small>
